@@ -1,0 +1,13 @@
+<h1>This a test page to display all users</h1>
+<h2>Users:</h2>
+<p></p>
+<% for(const user of users) { %>
+  <div class='user-container'>
+    <h3><%= user.username%></h3>
+    <p><%= user.password%></p>
+    <a href=<%='/user/'+user.id%>>Edit</a>
+    <a href=<%='/user/'+user.id+'/delete'%>>Delete</a>
+  </div>
+<% } %>
+
+<a href="/">return home</a>
