@@ -1,0 +1,18 @@
+<h1>Game Form</h1>
+<form method="POST" action=<%= action %>>
+    <p>This form will <%= type %> a Game</p>
+    <input name='title' type="text" value=<%= title %> placeholder="Title">
+    <input name='summary' type="text" value=<%= summary %> placeholder="Summary">
+    <input name='edition' type="text" value=<%= edition %> placeholder="Edition">
+    <input name='review' type="text" value=<%= review %> placeholder="Review">
+    <input name='price' type="number"  value=<%= price %> placeholder="Price">
+    <input name='discount' type="number" value=<%= discount %> placeholder="Discount">
+    <input name='release' type="date" value=<%= release %> placeholder="Release Date">
+    <select name="platform">
+        <% for(const platform of platform_list) {%>
+            <option value = <%= platform.name.replace(' ','_') %> ><%= platform.name %></option>
+        <% } %>
+    </select>
+    <input type="submit" value=<%= type %>>
+</form>
+<a href="/">Return Home</a>
