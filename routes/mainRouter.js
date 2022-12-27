@@ -5,7 +5,7 @@ const router = express.Router();
 const userController = require('../controllers/userController');
 
 //homepage
-router.get('/users', userController.users_page); // render page of all users
+router.get('/allusers', userController.users_page); // render page of all users
 
 // All other routes
 
