@@ -21,6 +21,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+const mainRouter = require('./routes/mainRouter');  // * import main router
+app.use('/', mainRouter); // * use mainRouter
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -37,5 +39,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// * Set up mongoose connection
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config(); // initialises dotenv
+const mongoDB = 'mongodb+srv://'+process.env.DB_USERNAME+':'+process.env.DB_PASSWORD+'@cluster0.0lvrsmq.mongodb.net/?retryWrites=true&w=majority';
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 module.exports = app;
