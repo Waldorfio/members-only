@@ -6,8 +6,9 @@ const async = require('async');
 // Render users page
 const users_page = async (req, res, next) => {
   try {
-    const users_list = await Game.find();
-    res.render('users', {
+    const users_list = await User.find();
+    console.log('users done')
+    res.render('allusers', {
       users: users_list,
     });
   } catch(err) {
