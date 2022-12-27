@@ -3,10 +3,13 @@
 <p></p>
 <% for(const user of users) { %>
   <div class='user-container'>
-    <h3><%= user.username%></h3>
-    <p><%= user.password%></p>
-    <a href=<%='/user/'+user.id%>>Edit</a>
-    <a href=<%='/user/'+user.id+'/delete'%>>Delete</a>
+    <ul>
+      <p><b>USERNAME: </b><%= user.username%></p>
+      <p><b>PASSWORD: </b><%= user.password%></p>
+      <a href=<%='/user/'+user.id%>>Edit</a>
+      <a href=<%='/user/'+user.id+'/delete'%>>Delete</a>
+    </ul>
+
   </div>
 <% } %>
 
