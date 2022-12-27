@@ -23,7 +23,7 @@ const user_create_get = async (req, res) => {
     res.render('userform', { // Set placeholder values in create form
       type: 'Create',
       action:'/user/create',
-      usernmae: 'John Doe',
+      username: 'John Doe',
       password: '',
     });
   } catch(err) {
@@ -64,9 +64,9 @@ const user_read = async (req, res) => {
     const founduser = await User.findById(req.params.id);
     res.render('userform', {
       type: 'Update',
-      action:'/user/'+foundUser.id,
-      username: foundUser.username,
-      password: foundUser.password,
+      action:'/user/'+founduser.id,
+      username: founduser.username,
+      password: founduser.password,
     })
   } catch(err) {
     console.error(err);
