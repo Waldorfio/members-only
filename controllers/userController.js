@@ -2,7 +2,7 @@ const User = require('../models/user');
 
 const { body, validationResult } = require('express-validator');
 const async = require('async');
-const bcrypt = require('bcryptjs'); // * New line to enable bcyrptjs
+const bcrypt = require('bcryptjs');
 
 // Render users page
 const users_page = async (req, res, next) => {
