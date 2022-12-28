@@ -2,6 +2,7 @@ const User = require('../models/user');
 
 const { body, validationResult } = require('express-validator');
 const async = require('async');
+const bcrypt = require('bcryptjs'); // * New line to enable bcyrptjs
 
 // Render users page
 const users_page = async (req, res, next) => {
@@ -23,8 +24,6 @@ const user_create_get = async (req, res) => {
     res.render('userform', { // Set placeholder values in create form
       type: 'Create',
       action:'/user/create',
-      username: 'John Doe',
-      password: '',
     });
   } catch(err) {
     console.error(err);
@@ -44,12 +43,14 @@ const user_create_post = [
       res.send('Validation Error: '+errors.array()[0].msg);
     } else {
       try {
-        const newuser = await User.create({
-          username: req.body.username,
-          password: req.body.password,
-        })
-        console.log('user created! ('+newuser+')');
-        res.redirect('/');
+        bcrypt.hash(req.body.password, 10, (err, hashedPassword) => { // * New bcryptjs line
+            const newuser = User.create({
+              username: req.body.username,
+              password: hashedPassword,
+            })
+            console.log('user created! ('+newuser+')');
+            res.redirect('/');
+        }) // * New bcryptjs line
       } catch(err) {
         console.error(err);
         res.redirect('error', err);
