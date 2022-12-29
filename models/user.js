@@ -8,6 +8,7 @@ const UserSchema = new Schema({
     username: { type: String, required: true },
     password: { type: String, required: true },
     membership: { type: Boolean, default: false },
+    admin: { type: Boolean, required: true, default: false },
 })
 
 // Export model

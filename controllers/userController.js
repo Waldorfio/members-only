@@ -49,7 +49,8 @@ const user_create_post = [
               lastname: req.body.lastname,
               username: req.body.username,
               password: hashedPassword,
-              membership: false,
+              membership: false, // default membership should be false
+              admin: req.body.admin,
             })
             console.log('user created! ('+newuser+')');
             res.redirect('/');
@@ -72,7 +73,8 @@ const user_read = async (req, res) => {
       firstname: founduser.firstname,
       lastname: founduser.lastname,
       username: founduser.username,
-      password: founduser.password
+      password: founduser.password,
+      admin: founduser.admin,
     })
   } catch(err) {
     console.error(err);
@@ -101,6 +103,7 @@ const user_update = [
               lastname: req.body.lastname,
               username: req.body.username,
               password: req.body.password,
+              admin: req.body.admin,
         }
         )
         console.log('user updated! ('+newuser+')');
