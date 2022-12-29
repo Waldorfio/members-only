@@ -16,7 +16,6 @@ A secret message forumn, with authenticated CRUD capabilities. Created using Nod
 
 ### TODO
 - Add bcryptjs authentication to update user form (edit user)
-- Add admin exclusive access to 'all-users' page
 
 ### Challenges Faced
 - Invoking middleware correctly
