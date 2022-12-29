@@ -1,8 +1,17 @@
-<h1>User Form</h1>
+<h1>Sign-up Form</h1>
 <form method="POST" action=<%= action %>>
     <p>This form will <%= type %> a User</p>
-    <input name='username' type="text" placeholder="Username">
-    <input name='password' type="text" placeholder="Password">
+
+
+    <label for="first-name">First Name</label>
+        <input name="first-name" placeholder="first name" type="text" />
+    <label for="last-name">Last Name</label>
+        <input name="last-name" placeholder="last name" type="text" />
+    <label for="username">Username</label>
+        <input name="username" placeholder="username" type="text" />
+    <label for="password">Password</label>
+        <input name="password" placeholder="password" type="password" />
+
     <input type="submit" value=<%= type %>>
 </form>
 <a href="/">Return Home</a>
