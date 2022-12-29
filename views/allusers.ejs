@@ -4,8 +4,10 @@
 <% for(const user of users) { %>
   <div class='user-container'>
     <ul>
+      <p><b>FULL NAME: </b><%= user.firstname + '' + user.lastname %></p>
       <p><b>USERNAME: </b><%= user.username%></p>
       <p><b>PASSWORD: </b><%= user.password%></p>
+      <p><b>MEMBER? </b><%= user.membership%></p>
       <a href=<%='/user/'+user.id%>>Edit</a>
       <a href=<%='/user/'+user.id+'/delete'%>>Delete</a>
     </ul>

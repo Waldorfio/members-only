@@ -11,6 +11,9 @@
     <ul>
       <li><a href="/allusers">All Users</a></li>
       <li><a href="/user/create">Sign Up</a></li>
+      <% if (user && user.membership === false) {%>
+        <li><a href="/memberform">Join the Club...</a></li>
+      <%}%>
     </ul>
     <p></p>
     <% if (user) {%>
