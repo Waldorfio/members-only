@@ -45,8 +45,11 @@ const user_create_post = [
       try {
         bcrypt.hash(req.body.password, 10, (err, hashedPassword) => { // * New bcryptjs line
             const newuser = User.create({
+              firstname: req.body.firstname,
+              lastname: req.body.lastname,
               username: req.body.username,
               password: hashedPassword,
+              membership: false,
             })
             console.log('user created! ('+newuser+')');
             res.redirect('/');
@@ -66,8 +69,10 @@ const user_read = async (req, res) => {
     res.render('userform', {
       type: 'Update',
       action:'/user/'+founduser.id,
+      firstname: founduser.firstname,
+      lastname: founduser.lastname,
       username: founduser.username,
-      password: founduser.password,
+      password: founduser.password
     })
   } catch(err) {
     console.error(err);
@@ -92,8 +97,11 @@ const user_update = [
         const newuser = await User.findByIdAndUpdate(
           { _id: req.params.id },
           {
-            username: req.body.username,
-            password: req.body.password}
+              firstname: req.body.firstname,
+              lastname: req.body.lastname,
+              username: req.body.username,
+              password: req.body.password,
+        }
         )
         console.log('user updated! ('+newuser+')');
         res.redirect('/allusers');
