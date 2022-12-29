@@ -33,5 +33,16 @@ router.get("/log-out", (req, res, next) => {
     res.redirect("/");
   });
 });
+// EXCLUSIVE MEMBERSHIP ACCESS
+router.get('/memberform', (req, res, next) => {
+    try {
+        console.log('+++You are now a member!')
+        res.render('memberform');
+      } catch(err) {
+        console.error(err);
+        res.redirect('error', err);
+      }   
+    }
+)
 
 module.exports = router;
