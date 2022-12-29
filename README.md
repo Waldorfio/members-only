@@ -14,8 +14,13 @@ A secret message forumn, with authenticated CRUD capabilities. Created using Nod
 - Practice creating and organising an MVC file structure
 - Practice routing with Async/Await
 
+### TODO
+- Add bcryptjs authentication to update user form (edit user)
+- Add admin exclusive access to 'all-users' page
+
 ### Challenges Faced
-- 
+- Invoking middleware correctly
+- Initialising passportjs and bcryptjs authentication correctly
 
 ## How to run the app
 This section is TBA. For now, you can click on the Live link above.
