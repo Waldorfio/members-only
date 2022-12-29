@@ -9,7 +9,9 @@ const users_page = async (req, res, next) => {
   try {
     const users_list = await User.find();
     console.log('users done')
+    console.log('-----------------req.user:  '+req.user)
     res.render('allusers', {
+      currentuser: req.user,
       users: users_list,
     });
   } catch(err) {
