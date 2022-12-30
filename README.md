@@ -1,6 +1,7 @@
 # Members Only: A secret forumn where only users can post/read
 
 A secret message forumn, with authenticated CRUD capabilities. Created using Node.js, Express, and MongoDB.
+HINT: the secret code is "odin"
 ## [Live Link 👈]()
 
 ### Features
