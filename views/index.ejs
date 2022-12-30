@@ -19,8 +19,14 @@
     <% if (user) {%>
       <h1>WELCOME BACK <%= user.username %></h1>
       <a href="/log-out">LOG OUT</a>
+      <h2>Post a message</h2>
+      <form action="/post-message" method="POST">
+        <label for="msg"></label>
+        <input name="msg" placeholder="enter your text here" type="text" />
+        <button>Post</button>
+      </form>
     <% } else { %>
-      <h1>please log in</h1>
+      <h2>please log in</h2>
       <form action="/log-in" method="POST">
         <label for="username">Username</label>
         <input name="username" placeholder="username" type="text" />
@@ -29,5 +35,33 @@
         <button>Log In</button>
       </form>
     <%}%>
+    <p></p>
+    
+    <div id="forum-container">
+      <h2>Forum</h2>
+
+      <% if (user && user.membership === true) { %>
+        <% for (const msg of messages) { %>
+          <div id="msg-container">
+            <h4><%= msg.username %></h4>
+            <div class="date"><i><%= msg.date %></i></div>
+            <span class="text">
+              <%= msg.text %>
+            </span>
+          </div>
+        <% } %>
+      <% } else { %>
+        <% for (const msg of messages) { %>
+          <div id="msg-container">
+            <h4>Username hidden</h4>
+            <div class="date"><i>Date hidden</i></div>
+            <span class="text">
+              <%= msg.text %>
+            </span>
+          </div>
+        <% } %>
+      <% } %>
+    </div>
+
   </body>
 </html>
