@@ -4,6 +4,7 @@ const passport = require("passport");
 
 // Require controllers
 const userController = require('../controllers/userController');
+const memberController = require('../controllers/memberController');
 
 // * USER ROUTES
 // SHOW ALL
@@ -19,6 +20,12 @@ router.post('/user/:id', userController.user_update);
 router.get('/user/:id/delete', userController.user_destroy_get); // redirect to delete page, asking to confirm deletion
 router.post('/user/:id/delete', userController.user_destroy_post); // process delete.js submit button
 
+// * MESSAGE ROUTES
+
+// * MEMBERFORM ROUTES
+router.get('/memberform', memberController.memberform_get);
+router.post('/memberform', memberController.memberform_post);
+
 // * LOGIN ROUTES
 // LOG IN
 router.post("/log-in", 
@@ -33,16 +40,5 @@ router.get("/log-out", (req, res, next) => {
     res.redirect("/");
   });
 });
-// EXCLUSIVE MEMBERSHIP ACCESS
-router.get('/memberform', (req, res, next) => {
-    try {
-        console.log('+++You are now a member!')
-        res.render('memberform');
-      } catch(err) {
-        console.error(err);
-        res.redirect('error', err);
-      }   
-    }
-)
 
 module.exports = router;

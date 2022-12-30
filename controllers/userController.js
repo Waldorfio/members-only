@@ -105,9 +105,8 @@ const user_update = [
               lastname: req.body.lastname,
               username: req.body.username,
               password: req.body.password,
-              admin: req.body.admin,
-        }
-        )
+              admin: req.body.admin
+          });
         console.log('user updated! ('+newuser+')');
         res.redirect('/allusers');
       } catch(err) {
