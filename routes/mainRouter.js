@@ -5,6 +5,7 @@ const passport = require("passport");
 // Require controllers
 const userController = require('../controllers/userController');
 const memberController = require('../controllers/memberController');
+const msgController = require('../controllers/msgController');
 
 // * USER ROUTES
 // SHOW ALL
@@ -21,6 +22,7 @@ router.get('/user/:id/delete', userController.user_destroy_get); // redirect to 
 router.post('/user/:id/delete', userController.user_destroy_post); // process delete.js submit button
 
 // * MESSAGE ROUTES
+router.post('/post-message', msgController.msg_post);
 
 // * MEMBERFORM ROUTES
 router.get('/memberform', memberController.memberform_get);
