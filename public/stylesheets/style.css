@@ -1,8 +1,48 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #fbfbfb;
 }
 
 a {
   color: #00B7FF;
+  text-decoration: none;
 }
+
+/*-----------------*/
+
+#header-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #bdbdbd;
+}
+#header-container > p {
+  font-weight: 700;
+  font-size: 14px;
+}
+#btn-container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  align-content: center;
+  justify-content: center;
+}
+  .button {
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(99, 102, 241);
+    font-weight: 700;
+    font-size: 14px;
+
+    display: grid;
+    align-content: center;
+    text-align: center;
+  }
+  .button:hover {
+    background-color: blue;
+  }
+

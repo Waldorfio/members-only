@@ -5,19 +5,21 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>Members Only</h1>
-    <p>A secret forumn for members only.</p>
-    <h2>Links:</h2>
-    <ul>
-      <li><a href="/allusers">All Users</a></li>
-      <li><a href="/user/create">Sign Up</a></li>
-      <% if (user && user.membership === false) {%>
-        <li><a href="/memberform">Join the Club...</a></li>
-      <%}%>
-    </ul>
-    <p></p>
+
+    <div id="header-container">
+      <h1>Members Only</h1>
+      <p>A secret forum for members only.</p>
+      <div id="btn-container">
+        <a href="/allusers" class="button" >All Users</a>
+        <a href="/user/create" class="button" >Sign Up</a>
+        <% if (user && user.membership === false) {%>
+          <a href="/memberform" class="button" >Join the Club...</a>
+        <%}%>
+      </div>
+    </div>
+
     <% if (user) {%>
-      <h1>WELCOME BACK <%= user.username %></h1>
+      <h1>Welcome back <%= user.username %></h1>
       <a href="/log-out">LOG OUT</a>
       <h2>Post a message</h2>
       <form action="/post-message" method="POST">
