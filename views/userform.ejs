@@ -1,19 +1,30 @@
-<h1>Sign-up Form</h1>
-<form method="POST" action=<%= action %>>
-    <p>This form will <%= type %> a User</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Members Only</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <h1>Sign-up Form</h1>
+    <form method="POST" action=<%= action %>>
+        <p>This form will <%= type %> a User</p>
 
 
-    <label for="firstname">First Name</label>
-        <input name="firstname" placeholder="first name" type="text" />
-    <label for="lastname">Last Name</label>
-        <input name="lastname" placeholder="last name" type="text" />
-    <label for="username">Username</label>
-        <input name="username" placeholder="username" type="text" />
-    <label for="password">Password</label>
-        <input name="password" placeholder="password" type="password" />
-    <label for="admin">Administrator</label>
-        <input name="admin" type="checkbox" value="true" />
+        <label for="firstname">First Name</label>
+            <input name="firstname" placeholder="first name" type="text" />
+        <label for="lastname">Last Name</label>
+            <input name="lastname" placeholder="last name" type="text" />
+        <label for="username">Username</label>
+            <input name="username" placeholder="username" type="text" />
+        <label for="password">Password</label>
+            <input name="password" placeholder="password" type="password" />
+        <label for="admin">Administrator</label>
+            <input name="admin" type="checkbox" value="true" />
 
-    <input type="submit" value=<%= type %>>
-</form>
-<a href="/">Return Home</a>
+        <input type="submit" value=<%= type %>>
+    </form>
+    <a href="/">Return Home</a>
+
+  </body>
+</html>

@@ -1,27 +1,38 @@
-<h1>This a test page to display all users</h1>
-<h2>Users:</h2>
-<p></p>
-<% if (currentuser) { %>
-  <% if (currentuser.admin) { %>
-    <% for(const user of users) { %>
-      <div class='user-container'>
-        <ul>
-          <p><b>FULL NAME: </b><%= user.firstname + ' ' + user.lastname %></p>
-          <p><b>USERNAME: </b><%= user.username%></p>
-          <p><b>PASSWORD: </b><%= user.password%></p>
-          <p><b>MEMBER? </b><%= user.membership%></p>
-          <p><b>ADMIN? </b><%= user.admin%></p>
-          <a href=<%='/user/'+user.id%>>Edit</a>
-          <a href=<%='/user/'+user.id+'/delete'%>>Delete</a>
-        </ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Members Only</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
 
-      </div>
+    <h1>This a test page to display all users</h1>
+    <h2>Users:</h2>
+    <p></p>
+    <% if (currentuser) { %>
+      <% if (currentuser.admin) { %>
+        <% for(const user of users) { %>
+          <div class='user-container'>
+            <ul>
+              <p><b>FULL NAME: </b><%= user.firstname + ' ' + user.lastname %></p>
+              <p><b>USERNAME: </b><%= user.username%></p>
+              <p><b>PASSWORD: </b><%= user.password%></p>
+              <p><b>MEMBER? </b><%= user.membership%></p>
+              <p><b>ADMIN? </b><%= user.admin%></p>
+              <a href=<%='/user/'+user.id%>>Edit</a>
+              <a href=<%='/user/'+user.id+'/delete'%>>Delete</a>
+            </ul>
+
+          </div>
+        <% } %>
+      <% } else { %>
+        <p>You are not an admin user. You must be an admin to view this page.</p>
+      <% } %>
+    <% } else { %>
+      <p>You are not logged in! Please log in as an admin.</p>
     <% } %>
-  <% } else { %>
-    <p>You are not an admin user. You must be an admin to view this page.</p>
-  <% } %>
-<% } else { %>
-  <p>You are not logged in! Please log in as an admin.</p>
-<% } %>
 
-<a href="/">return home</a>
+    <a href="/">return home</a>
+
+  </body>
+</html>
