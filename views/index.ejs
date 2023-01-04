@@ -18,26 +18,28 @@
       </div>
     </div>
 
-    <% if (user) {%>
-      <h1>Welcome back <%= user.username %></h1>
-      <a href="/log-out">LOG OUT</a>
-      <h2>Post a message</h2>
-      <form action="/post-message" method="POST">
-        <label for="msg"></label>
-        <input name="msg" placeholder="enter your text here" type="text" />
-        <button>Post</button>
-      </form>
-    <% } else { %>
-      <h2>please log in</h2>
-      <form action="/log-in" method="POST">
-        <label for="username">Username</label>
-        <input name="username" placeholder="username" type="text" />
-        <label for="password">Password</label>
-        <input name="password" type="password" />
-        <button>Log In</button>
-      </form>
-    <%}%>
-    <p></p>
+    <div id="container-two">
+      <% if (user) {%>
+        <h1>Welcome back <%= user.username %></h1>
+        <a href="/log-out">LOG OUT</a>
+        <h2>Post a message</h2>
+        <form action="/post-message" method="POST">
+          <label for="msg"></label>
+          <input name="msg" placeholder="enter your text here" type="text" />
+          <button>Post</button>
+        </form>
+      <% } else { %>
+        <h2>please log in</h2>
+        <form action="/log-in" method="POST">
+          <label for="username">Username</label>
+          <input name="username" placeholder="username" type="text" />
+          <label for="password">Password</label>
+          <input name="password" type="password" />
+          <button>Log In</button>
+        </form>    </div>
+      <%}%>
+      <p></p>
+    </div>
     
     <div id="forum-container">
       <h2>Forum</h2>
