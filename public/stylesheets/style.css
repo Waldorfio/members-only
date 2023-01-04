@@ -49,6 +49,10 @@ a {
 #container-two, #forum-container {
   padding: 15px;
 }
+#container-two > a {
+  font-size: 16px;
+  font-weight: 1000;
+}
 
 #forum-container {
   display: grid;
