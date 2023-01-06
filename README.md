@@ -20,7 +20,8 @@ HINT: the secret code is "odin"
 
 ### Challenges Faced
 - Invoking middleware correctly
-- Initialising passportjs and bcryptjs authentication correctly
+- Initialising passportjs and bcryptjs authentication middleware
+- Managing an MVC file structure in Express
 
 ## How to run the app
 This section is TBA. For now, you can click on the Live link above.
