@@ -1,38 +1,35 @@
-# Members Only: A secret forumn where only users can post/read
+# Members Only
 
-A secret message forumn, with authenticated CRUD capabilities. Created using Node.js, Express, and MongoDB.
-HINT: the secret code is "odin"
+A secret message forum that allows users to create, read, update and delete posts in a secret forum environment.  
+Users will have to be authenticated to perform any CRUD actions on the forum.
+
+*HINT: the secret code is "odin"*
 ## [Live Link 👈]()
 
 ### Features
-- Create, Read, Update, and Destroy authenticated messages in a private club
-- Validated model fields using express-validator
-- Routing with Async/Await for clean, readable and efficient routing
+- Users can register and log in to the application
+- Users with administrator privileges can create, read, update and delete posts within the forum
+- Users with member access can read messages in the forum after a successful authentication
 
-### Goals
-- Practice authentication with PassportJS and BcryptJS
-- Practice creating a full-fledged CRUDExpress app, with authentication
-- Practice creating and organising an MVC file structure
+#### Goals
+- Create a secure environment for users to share and discuss sensitive information
+- Implement user authentication and authorization to ensure only authorized users have access to the forum
+- Create CRUD functionality for certain users to manage posts
 - Practice routing with Async/Await
 
-### TODO
-- Add bcryptjs authentication to update user form (edit user)
-
-### Challenges Faced
-- Invoking middleware correctly
-- Initialising passportjs and bcryptjs authentication middleware
+#### Challenges Faced
+- Initialising passportjs and bcryptjs authentication middleware correctly
 - Managing an MVC file structure in Express
+- Implementing user authentication and authorization while ensuring a seamless user experience was a challenge.
 
-## How to run the app
-This section is TBA. For now, you can click on the Live link above.
+## Local Installation
+1.	Clone the repository `git clone https://github.com/Waldorfio/members-only.git`
+2.	Install the dependencies `npm install`
+3.	Start the web server using `npm run dev`
+4.	Open the application in your browser at `http://localhost:3000`
 
-## Dependencies
-- Express
-- Mongoose
-- Dotenv
-- Nodemon
-- Async
-- Luxon
-- Express router
-- PassportJS
-- BcryptJS
+## Technologies Used
+- Express.js for the back-end server
+- Node.js for the back-end environment
+- MongoDB for the database
+- EJS templating for the front-end
